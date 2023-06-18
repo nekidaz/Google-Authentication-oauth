@@ -9,6 +9,7 @@ import (
 	"golang.org/x/oauth2"
 	"log"
 	"net/http"
+	"strings"
 )
 
 var state string
@@ -47,7 +48,6 @@ func Callback(c *fiber.Ctx) error {
 
 	err = initializers.DB.Where("email = ?", userInfo.Email).First(&user).Error
 	if err != nil {
-		// Создание нового пользователя, если пользователь не найден в базе данных
 		user = models.User{
 			Name:  userInfo.Name,
 			Email: userInfo.Email,
@@ -57,7 +57,6 @@ func Callback(c *fiber.Ctx) error {
 			log.Fatal(err)
 		}
 	} else {
-		// Обновление информации о пользователе, если пользователь найден в базе данных
 		user.Name = userInfo.Name
 		err = initializers.DB.Save(&user).Error
 		if err != nil {
@@ -65,10 +64,14 @@ func Callback(c *fiber.Ctx) error {
 		}
 	}
 
-	c.Response().Header.Set("Authorization", "Bearer "+tok.AccessToken)
-	return c.Redirect("/profile/", http.StatusTemporaryRedirect)
-}
+	c.Cookie(&fiber.Cookie{
+		Name:     "Authorization",
+		Value:    "Bearer " + tok.AccessToken,
+		HTTPOnly: true,
+	})
 
+	return c.Redirect("/user", http.StatusTemporaryRedirect)
+}
 func ValidateGoogleToken(tokenString string) bool {
 	token := oauth2.Token{
 		AccessToken: tokenString,
@@ -84,4 +87,9 @@ func ValidateGoogleToken(tokenString string) bool {
 	}
 
 	return false
+}
+
+func ExtractTokenFromHeader(token string) string {
+	token = strings.Replace(token, "Bearer", "", 1)
+	return strings.TrimSpace(token)
 }
