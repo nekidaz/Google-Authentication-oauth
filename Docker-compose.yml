@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  app:
+    container_name: backend-container
+    restart: always
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    env_file:
+      - .env.app
+
+  postgres:
+    container_name: postgres-backend
+    image: postgres
+    expose:
+      - "5432"
+    ports:
+      - "5433:5432"
+    env_file:
+      - .env.postgres
