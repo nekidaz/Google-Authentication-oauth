@@ -1,6 +1,6 @@
 package initializers
 
-import "GoogleAuthv2.0/internal/models"
+import "github.com/nekidaz/Google-Authentication-oauth/internal/models"
 
 func SyncDatabase() {
 	DB.AutoMigrate(&models.User{})

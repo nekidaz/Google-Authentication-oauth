@@ -1,11 +1,11 @@
 package middlewares
 
 import (
-	"GoogleAuthv2.0/controllers"
-	"GoogleAuthv2.0/initializers"
-	"GoogleAuthv2.0/internal/models"
 	"encoding/json"
 	"github.com/gofiber/fiber/v2"
+	"github.com/nekidaz/Google-Authentication-oauth/controllers"
+	"github.com/nekidaz/Google-Authentication-oauth/initializers"
+	"github.com/nekidaz/Google-Authentication-oauth/internal/models"
 	"golang.org/x/oauth2"
 	"log"
 	"net/http"

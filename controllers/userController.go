@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"GoogleAuthv2.0/internal/models"
 	"github.com/gofiber/fiber/v2"
+	"github.com/nekidaz/Google-Authentication-oauth/internal/models"
 )
 
 func Profile(c *fiber.Ctx) error {
