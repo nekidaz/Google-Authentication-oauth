@@ -11,7 +11,6 @@ import (
 )
 
 func init() {
-	initializers.LoadEnvVariables()
 	initializers.InitializeOAuthConfig()
 	initializers.ConnectToDb()
 	initializers.SyncDatabase()
