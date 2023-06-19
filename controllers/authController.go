@@ -1,11 +1,11 @@
 package controllers
 
 import (
-	"GoogleAuthv2.0/initializers"
-	"GoogleAuthv2.0/internal/models"
 	"context"
 	"encoding/json"
 	"github.com/gofiber/fiber/v2"
+	"github.com/nekidaz/Google-Authentication-oauth/initializers"
+	"github.com/nekidaz/Google-Authentication-oauth/internal/models"
 	"golang.org/x/oauth2"
 	"log"
 	"net/http"

@@ -1,12 +1,12 @@
 package main
 
 import (
-	"GoogleAuthv2.0/controllers"
-	"GoogleAuthv2.0/initializers"
-	middlewares "GoogleAuthv2.0/middleware"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/template/html/v2"
+	"github.com/nekidaz/Google-Authentication-oauth/controllers"
+	"github.com/nekidaz/Google-Authentication-oauth/initializers"
+	middlewares "github.com/nekidaz/Google-Authentication-oauth/middleware"
 	"log"
 )
 

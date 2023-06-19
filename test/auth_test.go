@@ -1,7 +1,7 @@
 package test
 
 import (
-	"GoogleAuthv2.0/controllers"
+	"github.com/nekidaz/Google-Authentication-oauth/controllers"
 	"testing"
 )
 

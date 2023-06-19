@@ -1,11 +1,12 @@
-module GoogleAuthv2.0
+module github.com/nekidaz/Google-Authentication-oauth
 
 go 1.19
+
+
 
 require (
 	github.com/gofiber/fiber/v2 v2.46.0
 	github.com/gofiber/template/html/v2 v2.0.4
-	github.com/joho/godotenv v1.5.1
 	golang.org/x/oauth2 v0.9.0
 	gorm.io/driver/postgres v1.5.2
 	gorm.io/gorm v1.25.1
