@@ -30,4 +30,4 @@ Before running this application, make sure you have the following installed on y
 4. Build and run the Docker containers:
    ```shell
    docker-compose up --build
-5.Access the application in your browser at http://localhost:8080 or the specified port.
+5. Access the application in your browser at http://localhost:8080 or the specified port.
